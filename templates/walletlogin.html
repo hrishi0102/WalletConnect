@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChainBank</title>
+</head>
+<body>
+    <style>
+        #Connect{
+            background-color: rgb(25, 229, 240);
+            height: 50px;
+            width: 100px;
+            font-size: medium;
+            border-radius: 8px;
+        }
+    </style>
+    <script>
+        async function connect() {
+            if(typeof window.ethereum !== "undefined"){
+            await ethereum.request({method : "eth_requestAccounts"});
+        }
+        return 1;
+            
+        }
+        
+        async function await(){
+            var connected = await connect();
+            if(connected==1){
+                document.getElementById("Connect").innerHTML = "Connected Wallet";
+            }
+            
+        }
+        
+    </script>
+    <button id="Connect" onclick="await()">Connect</button>
+    
+    <button type="submit"><a href="/logout">Logout</a></button>
+    
+</body>
+</html>
